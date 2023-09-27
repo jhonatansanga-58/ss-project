@@ -10,6 +10,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
 import { EventsComponent } from './events/events.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoginComponent } from './login/login.component';
+import { EventComponent } from './event/event.component';
+import { EventInfoComponent } from './event-info/event-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LoginComponent } from './login/login.component';
     MyEventsComponent,
     EventsComponent,
     MyProfileComponent,
-    LoginComponent
+    LoginComponent,
+    EventComponent,
+    EventInfoComponent
   ],
   imports: [
     BrowserModule,
