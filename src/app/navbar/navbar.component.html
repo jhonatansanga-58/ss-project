@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<p>
+  <mat-toolbar color="primary" class="mat-elevation-z8">
+    <span><mat-icon>cake</mat-icon>Full Events</span>
+    <div class="spacer"></div>
+    <a mat-button routerLink="">Events</a>
+    <a mat-button routerLink="myevents">My events</a>
+    <a mat-button routerLink="myprofile">Profile</a>
+    <a mat-raised-button routerLink="login" color="accent">Log in</a>
+    <a mat-raised-button (click)="logout()" color="accent">Log out</a>
+  </mat-toolbar>
+</p>
