@@ -1,1 +1,35 @@
-<p>login works!</p>
+<mat-card class="card">
+  <mat-card-header class="title">
+    <mat-card-title>
+      <h1>Log in</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <br>
+  <mat-card-content>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>User name</mat-label>
+        <input type="text" matInput placeholder="Placeholder" required>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-hint>Your user name</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [type]="password" matInput placeholder="Placeholder" required>
+        <mat-icon class="show-password" *ngIf="!show" matSuffix (click)="showPassword()">visibility</mat-icon>
+        <mat-icon class="show-password" *ngIf="show" matSuffix (click)="hidePassword()">visibility_off</mat-icon>
+        <mat-hint>Your password</mat-hint>
+      </mat-form-field>
+    </p>
+    <div class="login">
+      <button class="login-button" type="submit" mat-raised-button color="primary">
+        LOG IN
+      </button>
+    </div>
+    <p>
+      Don't you have an account? <a href="/sign-up">Sign up</a>
+    </p>
+  </mat-card-content>
+</mat-card>
