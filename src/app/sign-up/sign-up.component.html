@@ -1,0 +1,58 @@
+<mat-card class="card">
+  <mat-card-header class="title">
+    <mat-card-title>
+      <h1>Sign in</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <br>
+  <mat-card-content>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>User name</mat-label>
+        <input type="text" matInput placeholder="Placeholder" required>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-hint>Your user name</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Placeholder" required>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-hint>Your email</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Birthday</mat-label>
+        <input matInput [matDatepicker]="picker" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [type]="password" matInput placeholder="Placeholder" required>
+        <mat-icon class="show-password" *ngIf="!show" matSuffix (click)="showPassword()">visibility</mat-icon>
+        <mat-icon class="show-password" *ngIf="show" matSuffix (click)="hidePassword()">visibility_off</mat-icon>
+        <mat-hint>Your password</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Repeat the password</mat-label>
+        <input [type]="password" matInput placeholder="Placeholder" required>
+        <mat-icon class="show-password" *ngIf="!show" matSuffix (click)="showPassword()">visibility</mat-icon>
+        <mat-icon class="show-password" *ngIf="show" matSuffix (click)="hidePassword()">visibility_off</mat-icon>
+        <mat-hint>Repeat</mat-hint>
+      </mat-form-field>
+    </p>
+    <div class="login">
+      <button class="login-button" type="submit" mat-raised-button color="primary">
+        CREATE ACCOUNT
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
