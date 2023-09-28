@@ -26,4 +26,8 @@ export class EventComponent {
   public eventInfo() {
     this.router.navigate(['/event', 0]);
   }
+
+  public editEvent() {
+    this.router.navigate(['/edit', 0]);
+  }
 }
