@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSlideToggleModule
   ]
 })
 export class AppMaterialModule { }

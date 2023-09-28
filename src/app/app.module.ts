@@ -14,6 +14,9 @@ import { EventComponent } from './event/event.component';
 import { EventInfoComponent } from './event-info/event-info.component';
 import { ModalCancelRegistrationComponent } from './modal-cancel-registration/modal-cancel-registration.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ModalCreateEventComponent } from './modal-create-event/modal-create-event.component';
+import { ModalUpdateEventComponent } from './modal-update-event/modal-update-event.component';
+import { ModalDisableEventComponent } from './modal-disable-event/modal-disable-event.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     EventComponent,
     EventInfoComponent,
     ModalCancelRegistrationComponent,
-    SignUpComponent
+    SignUpComponent,
+    ModalCreateEventComponent,
+    ModalUpdateEventComponent,
+    ModalDisableEventComponent
   ],
   imports: [
     BrowserModule,
