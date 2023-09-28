@@ -1,7 +1,7 @@
 <mat-card class="card">
   <mat-card-header class="title">
     <mat-card-title>
-      <h1>UN EVENTO</h1>
+      <h1>AN EVENT</h1>
     </mat-card-title>
   </mat-card-header>
   <img mat-card-image src="/assets/images/event.jpg" alt="">
@@ -13,9 +13,11 @@
     </p>
     <div class="options">
       <button mat-raised-button color="primary">REGISTER!</button>
-      <button mat-raised-button color="warn" (click)="openDialog('70ms', '70ms')">CANCEL REGISTRATION</button>
+      <button mat-raised-button color="warn" (click)="openCancelRegistrationDialog('70ms', '70ms')">CANCEL REGISTRATION</button>
       <button mat-raised-button color="accent" (click)="eventInfo()">SEE MORE</button>
-      <button mat-raised-button color="green" (click)="editEvent()">EDIT</button>
+      <button mat-raised-button color="green" (click)="openEditEventDialog('70ms', '70ms')">EDIT</button>
+      <mat-slide-toggle>State</mat-slide-toggle>
+
     </div>
   </mat-card-content>
 </mat-card>
