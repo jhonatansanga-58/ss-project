@@ -12,6 +12,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoginComponent } from './login/login.component';
 import { EventComponent } from './event/event.component';
 import { EventInfoComponent } from './event-info/event-info.component';
+import { ModalCancelRegistrationComponent } from './modal-cancel-registration/modal-cancel-registration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EventInfoComponent } from './event-info/event-info.component';
     MyProfileComponent,
     LoginComponent,
     EventComponent,
-    EventInfoComponent
+    EventInfoComponent,
+    ModalCancelRegistrationComponent
   ],
   imports: [
     BrowserModule,
