@@ -1,23 +1,23 @@
 <mat-card class="card">
   <mat-card-header class="title">
     <mat-card-title>
-      <h1>AN EVENT</h1>
+      <h1>{{event.title}}</h1>
     </mat-card-title>
   </mat-card-header>
   <img mat-card-image src="/assets/images/event.jpg" alt="">
   <br>
   <mat-card-content>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor at, esse quasi sunt illum voluptatum
-      ratione omnis explicabo blanditiis, consequuntur eos quidem ipsum reprehenderit accusamus ipsam animi vitae
-      fugiat.
+    <p>
+      {{event.description}}
     </p>
     <div class="options">
-      <button mat-raised-button color="primary">REGISTER!</button>
-      <button mat-raised-button color="warn" (click)="openCancelRegistrationDialog('70ms', '70ms')">CANCEL REGISTRATION</button>
+      <button mat-raised-button *ngIf="role == '1' && view == 'events'" color="primary">REGISTER!</button>
+      <button mat-raised-button *ngIf="role == '1' && view == 'my events'" color="warn" (click)="openCancelRegistrationDialog('70ms', '70ms')">
+        CANCEL REGISTRATION
+      </button>
       <button mat-raised-button color="accent" (click)="eventInfo()">SEE MORE</button>
-      <button mat-raised-button color="green" (click)="openEditEventDialog('70ms', '70ms')">EDIT</button>
-      <mat-slide-toggle>State</mat-slide-toggle>
-
+      <button mat-raised-button *ngIf="role == '0'" color="green"
+        (click)="openEditEventDialog('70ms', '70ms')">EDIT</button>
     </div>
   </mat-card-content>
 </mat-card>
