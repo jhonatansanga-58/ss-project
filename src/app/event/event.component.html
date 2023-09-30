@@ -11,7 +11,7 @@
       {{event.description}}
     </p>
     <div class="options">
-      <button mat-raised-button *ngIf="role == '1' && view == 'events'" color="primary">REGISTER!</button>
+      <button mat-raised-button *ngIf="role == '1' && view == 'events'" (click)="register()" color="primary">REGISTER!</button>
       <button mat-raised-button *ngIf="role == '1' && view == 'my events'" color="warn" (click)="openCancelRegistrationDialog('70ms', '70ms')">
         CANCEL REGISTRATION
       </button>

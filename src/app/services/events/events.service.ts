@@ -26,4 +26,8 @@ export class EventsService {
   public getEventInfo(id) {
     return this.http.get(`${environment.apiUrl}/event/info/` + id);
   }
+
+  public registerToEvent(userId, eventId) {
+    return this.http.post(`${environment.apiUrl}/event/register`, { user_id: userId, event_id: eventId });
+  }
 }
