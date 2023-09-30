@@ -4,6 +4,9 @@ import { ModalCancelRegistrationComponent } from '../modal-cancel-registration/m
 import { Router } from '@angular/router';
 import { ModalUpdateEventComponent } from '../modal-update-event/modal-update-event.component';
 import { Event } from '../models/event.model';
+import { EventsService } from '../services/events/events.service';
+import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-event',
@@ -17,8 +20,11 @@ export class EventComponent {
   @Input() view: string;
 
   constructor(
+    private eventsService: EventsService,
     public dialog: MatDialog,
-    private router: Router
+    private snackBar: MatSnackBar,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   openCancelRegistrationDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -39,5 +45,23 @@ export class EventComponent {
 
   public eventInfo(id) {
     this.router.navigate(['/event', id]);
+  }
+
+  public register() {
+    const registerMessage = 'You have successfully registered!';
+    this.eventsService.registerToEvent(this.authService.userValue.id, this.event.id).subscribe({
+      next: (res) => {
+        this.snackBar.open(registerMessage, 'OK', {
+          duration: 5000,
+        });
+        this.router.navigate(['/'])
+          .then(() => {
+            window.location.reload();
+          });
+      },
+      error: (res) => {
+        this.snackBar.open(res.error.message, 'OK', { duration: 5000 });
+      }
+    });
   }
 }
