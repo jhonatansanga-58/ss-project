@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CreateEventDto } from 'src/app/dto/event.dto';
+import { CreateEventDto, UpdateEventDto } from 'src/app/dto/event.dto';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -38,5 +38,9 @@ export class EventsService {
 
   public createEvent(event: CreateEventDto) {
     return this.http.post(`${environment.apiUrl}/event/create`, event);
+  }
+  
+  public updateEvent(event: UpdateEventDto) {
+    return this.http.put(`${environment.apiUrl}/event/update`, event);
   }
 }

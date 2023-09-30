@@ -43,7 +43,7 @@ export class EventsComponent implements OnInit {
         description: item.description,
         location: item.location,
         start_date: item.start_date,
-        end_date: item.v,
+        end_date: item.end_date,
         time: item.time,
         min_age: item.min_age
       };

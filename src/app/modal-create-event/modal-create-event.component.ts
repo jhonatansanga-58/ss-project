@@ -38,7 +38,7 @@ export class ModalCreateEventComponent {
   public onSubmit() {
     const createMessage = 'Event created!';
     
-    this.eventsService.createEvent(this.buildUserPayload()).subscribe({
+    this.eventsService.createEvent(this.buildEventPayload()).subscribe({
       next: () => {
         this.snackBar.open(createMessage, 'OK', {
           duration: 5000,
@@ -54,7 +54,7 @@ export class ModalCreateEventComponent {
     });
   }
 
-  private buildUserPayload(): CreateEventDto {
+  private buildEventPayload(): CreateEventDto {
     const startDate = new Date(this.createEventForm.get('start_date').value);
     const endDate = new Date(this.createEventForm.get('end_date').value);
     
