@@ -15,4 +15,8 @@ export class UsersService {
   public logInUser(payload: LoginUserDto) {
     return this.http.post(`${environment.apiUrl}/user/login`, payload);
   }
+
+  public createUser(payload: LoginUserDto) {
+    return this.http.post(`${environment.apiUrl}/user/create`, payload);
+  }
 }
