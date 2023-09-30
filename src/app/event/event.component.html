@@ -15,7 +15,7 @@
       <button mat-raised-button *ngIf="role == '1' && view == 'my events'" color="warn" (click)="openCancelRegistrationDialog('70ms', '70ms')">
         CANCEL REGISTRATION
       </button>
-      <button mat-raised-button color="accent" (click)="eventInfo()">SEE MORE</button>
+      <button mat-raised-button color="accent" (click)="eventInfo(event.id)">SEE MORE</button>
       <button mat-raised-button *ngIf="role == '0'" color="green"
         (click)="openEditEventDialog('70ms', '70ms')">EDIT</button>
     </div>

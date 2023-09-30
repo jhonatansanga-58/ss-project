@@ -37,7 +37,7 @@ export class EventComponent {
     });
   }
 
-  public eventInfo() {
-    this.router.navigate(['/event', 0]);
+  public eventInfo(id) {
+    this.router.navigate(['/event', id]);
   }
 }
