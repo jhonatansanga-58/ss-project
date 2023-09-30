@@ -17,6 +17,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ModalCreateEventComponent } from './modal-create-event/modal-create-event.component';
 import { ModalUpdateEventComponent } from './modal-update-event/modal-update-event.component';
 import { ModalDisableEventComponent } from './modal-disable-event/modal-disable-event.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { ModalDisableEventComponent } from './modal-disable-event/modal-disable-
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

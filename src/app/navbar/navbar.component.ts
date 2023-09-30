@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCreateEventComponent } from '../modal-create-event/modal-create-event.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +10,20 @@ import { ModalCreateEventComponent } from '../modal-create-event/modal-create-ev
 })
 export class NavbarComponent {
 
+  isLoggedIn: boolean;
+  userName: string = null;
+  userRole: string = null;
+
   constructor(
-    public dialog: MatDialog
-  ) { }
+    public dialog: MatDialog,
+    private authService: AuthService
+  ) {
+    this.isLoggedIn = authService.userValue === null ? false : true;
+    if (this.isLoggedIn) {
+      this.userName = authService.userValue.name;
+      this.userRole = authService.roleValue;
+    }
+  }
 
   openCreateEventDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(ModalCreateEventComponent, {
@@ -22,5 +34,6 @@ export class NavbarComponent {
   }
 
   public logout() {
+    this.authService.logout();
   }
 }
