@@ -30,4 +30,8 @@ export class EventsService {
   public registerToEvent(userId, eventId) {
     return this.http.post(`${environment.apiUrl}/event/register`, { user_id: userId, event_id: eventId });
   }
+  
+  public unregisterFromEvent(userId, eventId) {
+    return this.http.delete(`${environment.apiUrl}/event/unregister/` + userId + '/' + eventId);
+  }
 }
