@@ -1,63 +1,72 @@
 <h1 mat-dialog-title>New Event</h1>
 <div mat-dialog-content>
-  <br>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Title</mat-label>
-      <input type="text" matInput placeholder="Placeholder" required>
-      <mat-hint>The title of the event</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Description</mat-label>
-      <input type="text" matInput placeholder="Placeholder" required>
-      <mat-hint>What is the event about?</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Location</mat-label>
-      <input type="text" matInput placeholder="Placeholder" required>
-      <mat-hint>Where will the event take place?</mat-hint>
-    </mat-form-field>
-  </p>
-  <br>
-  <p>
-    <mat-form-field>
-      <mat-label>Start date</mat-label>
-      <input matInput [matDatepicker]="picker" required>
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field>
-      <mat-label>Finish date</mat-label>
-      <input matInput [matDatepicker]="picker" required>
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Time</mat-label>
-      <input type="text" matInput placeholder="Placeholder" required>
-      <mat-hint>What time will the event start?</mat-hint>
-    </mat-form-field>
-  </p>
-  <br>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Minimum age</mat-label>
-      <input type="number" matInput placeholder="Placeholder" required>
-      <mat-hint>Minimum age to sign up</mat-hint>
-    </mat-form-field>
-  </p>
+  <form [formGroup]="createEventForm">
+    <br>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>The title of the event</mat-hint>
+        <mat-error>Title name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input formControlName="description" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>What is the event about?</mat-hint>
+        <mat-error>Description name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Location</mat-label>
+        <input formControlName="location" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>Where will the event take place?</mat-hint>
+        <mat-error>Location name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <br>
+    <p>
+      <mat-form-field>
+        <mat-label>Start date</mat-label>
+        <input formControlName="start_date" matInput [matDatepicker]="picker1" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error>Start date name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Finish date</mat-label>
+        <input formControlName="end_date" matInput [matDatepicker]="picker2" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        <mat-error>Finish date name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Time</mat-label>
+        <input formControlName="time" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>What time will the event start?</mat-hint>
+        <mat-error>Time name is required</mat-error>
+      </mat-form-field>
+    </p>
+    <br>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Minimum age</mat-label>
+        <input formControlName="min_age" type="number" matInput placeholder="Placeholder" required>
+        <mat-hint>Minimum age to sign up</mat-hint>
+        <mat-error>Minimum age name is required</mat-error>
+      </mat-form-field>
+    </p>
+  </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close color="warn">Cancel</button>
-  <button mat-button mat-dialog-close color="primary">Create</button>
+  <button mat-button mat-dialog-close color="primary" [disabled]="createEventForm.invalid" (click)="onSubmit()">Create</button>
 </div>
