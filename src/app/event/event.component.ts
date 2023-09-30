@@ -40,6 +40,7 @@ export class EventComponent {
       width: 'auto',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: this.event
     });
   }
 
