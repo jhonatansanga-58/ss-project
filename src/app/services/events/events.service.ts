@@ -22,4 +22,8 @@ export class EventsService {
   public getRegisteredEvents(id) {
     return this.http.get(`${environment.apiUrl}/event/registered/` + id);
   }
+
+  public getEventInfo(id) {
+    return this.http.get(`${environment.apiUrl}/event/info/` + id);
+  }
 }

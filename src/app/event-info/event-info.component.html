@@ -1,19 +1,18 @@
 <mat-card class="card">
   <mat-card-header class="title">
     <mat-card-title>
-      <h1>UN EVENTO</h1>
+      <h1>{{event.title}}</h1>
     </mat-card-title>
   </mat-card-header>
   <img mat-card-image src="/assets/images/event.jpg" alt="">
   <br>
   <mat-card-content>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor at, esse quasi sunt illum voluptatum
-      ratione omnis explicabo blanditiis, consequuntur eos quidem ipsum reprehenderit accusamus ipsam animi vitae
-      fugiat.
+    <p>
+      {{event.description}}
     </p>
-    <p>Location:</p>
-    <p>Time:</p>
-    <p>Date:</p>
-    <p>Minimum age:</p>
+    <p>Location: {{event.location}}</p>
+    <p>Time: {{event.time}}</p>
+    <p>Date: From {{event.start_date}} to {{event.end_date}}</p>
+    <p>Minimum age: {{event.min_age}}</p>
   </mat-card-content>
 </mat-card>
