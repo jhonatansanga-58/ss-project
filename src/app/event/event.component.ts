@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { ModalCancelRegistrationComponent } from '../modal-cancel-registration/modal-cancel-registration.component';
 import { Router } from '@angular/router';
 import { ModalUpdateEventComponent } from '../modal-update-event/modal-update-event.component';
+import { Event } from '../models/event.model';
 
 @Component({
   selector: 'app-event',
@@ -10,6 +11,10 @@ import { ModalUpdateEventComponent } from '../modal-update-event/modal-update-ev
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent {
+
+  @Input() event: Event;
+  @Input() role: string;
+  @Input() view: string;
 
   constructor(
     public dialog: MatDialog,
@@ -31,7 +36,7 @@ export class EventComponent {
       exitAnimationDuration,
     });
   }
-  
+
   public eventInfo() {
     this.router.navigate(['/event', 0]);
   }
