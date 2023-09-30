@@ -1,0 +1,73 @@
+<h1 mat-dialog-title>Edit Event</h1>
+<div mat-dialog-content>
+  <br>
+  <form [formGroup]="updateEventForm">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>The title of the event</mat-hint>
+        <mat-error>Title is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input formControlName="description" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>What is the event about?</mat-hint>
+        <mat-error>Description is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Location</mat-label>
+        <input formControlName="location" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>Where will the event take place?</mat-hint>
+        <mat-error>Location is required</mat-error>
+      </mat-form-field>
+    </p>
+    <br>
+    <p>
+      <mat-form-field>
+        <mat-label>Start date</mat-label>
+        <input formControlName="start_date" matInput [matDatepicker]="picker1" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error>Start date is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Finish date</mat-label>
+        <input formControlName="end_date" matInput [matDatepicker]="picker2" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        <mat-error>Finish date is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Time</mat-label>
+        <input formControlName="time" type="text" matInput placeholder="Placeholder" required>
+        <mat-hint>What time will the event start?</mat-hint>
+        <mat-error>Time is required</mat-error>
+      </mat-form-field>
+    </p>
+    <br>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Minimum age</mat-label>
+        <input formControlName="min_Age" type="number" matInput placeholder="Placeholder" required>
+        <mat-hint>Minimum age to sign up</mat-hint>
+        <mat-error>Minimum age is required</mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn">Cancel</button>
+  <button mat-button mat-dialog-close color="primary" [disabled]="updateEventForm.invalid"
+    (click)="onSubmit()">Confirm</button>
+</div>

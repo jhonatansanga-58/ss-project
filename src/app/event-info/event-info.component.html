@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-header class="title">
+    <mat-card-title>
+      <h1>{{event.title}}</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/event.jpg" alt="">
+  <br>
+  <mat-card-content>
+    <p>
+      {{event.description}}
+    </p>
+    <p>Location: {{event.location}}</p>
+    <p>Time: {{event.time}}</p>
+    <p>Date: From {{event.start_date}} to {{event.end_date}}</p>
+    <p>Minimum age: {{event.min_age}}</p>
+  </mat-card-content>
+</mat-card>
